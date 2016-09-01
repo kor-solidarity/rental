@@ -24,4 +24,25 @@ $(document).ready(function(){
 	      complete: function() { alert('Closed'); } // Callback for Modal close
 	    }
 	  );
+	 $("#card1").css("display","none");
+	 $("#search1").on("click",function() {
+         if ($("#card1").css("display") == "none") {
+            $("#card1").show("fast");
+            $("#card2").hide("fast");
+         }else{
+            $("#card1").css("display","none");
+         }
+
+      });
+	 $("#card2").css("display","none");
+	 $("#search2").on("click",function() {
+         if ($("#card2").css("display") == "none") {
+        	 $("#card2").show("fast");
+            $("#card1").hide("fast");
+         }else{
+            $("#card2").css("display","none");
+         }
+
+      });
+
 });

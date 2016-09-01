@@ -1,3 +1,11 @@
 .parallax-container {
       height: 200px;
     }
+#card1{
+	position:absolute;
+	z-index: 1;
+}
+#card2{
+	position:absolute;
+	z-index: 1;
+}

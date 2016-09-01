@@ -18,9 +18,9 @@
 <script type="text/javascript" src="js/script.js"></script>
 <%@ include file="index_top.jsp" %>
      
+		 
 		
-	</div>
-</div>
+
 
 <%@ include file="index_bottom.jsp" %>
 </body>

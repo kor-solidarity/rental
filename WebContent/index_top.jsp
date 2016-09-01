@@ -57,8 +57,8 @@
 </div>
 
 <!-- 패럴렉스 이미지 및 로고 뷰 large에서만 보임 -->
-<div class="parallax-container hide-on-med-and-down">
-   <a href="#" class="valign hide-on-small-only"><h3 class="white-text center">RENTAL</h3></a>
+<div class="parallax-container">
+   <a href="#" class="valign hide-on-med-and-down"><h3 class="white-text center">RENTAL</h3></a>
    <div class="parallax"><img src="data/main.jpg">
 	</div>
 </div>
@@ -96,15 +96,71 @@
     <div class="col s12 l8">
 		<!-- 컨테이너 영역 -->
 		<div class="row">
+			<!-- 대여정보 버튼영역-->
 			<div class="col s12 l4">
-				<a href="#modal2" id="modalrental" class="button-collapse modal-trigger"><i class="material-icons">menu</i></a>
+				<div class="card" id="search1">
+					<div class="card-content">
+						<span class="card-title activator grey-text text-darken-4">
+							<i class="material-icons">location_on</i><span>지역</span>
+						</span>
+						<p>
+							<i class="material-icons">av_timer</i><span>시간</span>
+						</p>
+					</div>
+				</div>
+				<!-- 대여정보 세부선택영역 -->
+				<div class="col s12 m3" id="card1">
+					<div class="row">
+						<div class="card">
+							<div class="card-content black-text">
+								대여날짜
+								<div class="input-field col s12">
+									<select>
+										<option value="" disabled selected>Choose your option</option>
+										<option value="1">Option 1</option>
+										<option value="2">Option 2</option>
+										<option value="3">Option 3</option>
+									</select> <label>Materialize Select</label>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
+			<!-- 반납정보 버튼영역 -->
 			<div class="col s12 l4">
-				<a href="#modal3" id="modalreturn" class="button-collapse modal-trigger"><i class="material-icons">menu</i></a>
+				<div class="card" id="search2">
+					<div class="card-content">
+						<span class="card-title activator grey-text text-darken-4">
+							<i class="material-icons">location_on</i><span>지역</span>
+						</span>
+						<p>
+							<i class="material-icons">av_timer</i><span>시간</span>
+						</p>
+					</div>
+				</div>
+				<!-- 반납정보 세부선택영역 -->
+				<div class="col s12 m3" id="card2">
+					<div class="card light-blue lighten-1">
+						<div class="card-content white-text">
+							<span class="card-title">Card Title</span>
+							<p>I am a very simple card. I am good at containing small
+								bits of information. I am convenient because I require little
+								markup to use effectively.</p>
+						</div>
+						<div class="card-action">
+							<a href="#">This is a link</a> <a href="#">This is a link</a>
+						</div>
+					</div>
+				</div>
 			</div>
+				
 			<div class="col s12 l4">
 				
 			</div>
+			
 		</div>
+		
 
 
