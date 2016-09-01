@@ -101,28 +101,41 @@
 				<div class="card" id="search1">
 					<div class="card-content">
 						<span class="card-title activator grey-text text-darken-4">
-							<i class="material-icons">location_on</i><span>지역</span>
+							<i class="material-icons">location_on</i><span>대여지역</span>
 						</span>
 						<p>
-							<i class="material-icons">av_timer</i><span>시간</span>
+							<i class="material-icons">av_timer</i><span>대여시간</span>
 						</p>
 					</div>
 				</div>
 				<!-- 대여정보 세부선택영역 -->
-				<div class="col s12 m3" id="card1">
+				<div class="col s12 l3" id="card1">
 					<div class="row">
 						<div class="card">
 							<div class="card-content black-text">
-								대여날짜
+								<span>대여날짜</span>
 								<div class="input-field col s12">
 									<select>
-										<option value="" disabled selected>Choose your option</option>
+										<option value="" disabled selected>대여날짜를 선택해주세요</option>
 										<option value="1">Option 1</option>
 										<option value="2">Option 2</option>
 										<option value="3">Option 3</option>
-									</select> <label>Materialize Select</label>
+									</select>
 								</div>
-								
+								<p>
+								대여지역 선택
+								</p>
+								<select>
+										<option value="" disabled selected>대여날짜를 선택해주세요</option>
+										<option value="1">Option 1</option>
+										<option value="2">Option 2</option>
+										<option value="3">Option 3</option>
+								</select>
+								<a class="waves-effect waves-light btn">button</a>
+								<button class="btn waves-effect waves-light" type="submit"
+									name="action">
+									Submit
+								</button>
 							</div>
 						</div>
 					</div>
@@ -141,16 +154,32 @@
 					</div>
 				</div>
 				<!-- 반납정보 세부선택영역 -->
-				<div class="col s12 m3" id="card2">
+				<div class="col s12 l3" id="card2">
 					<div class="card light-blue lighten-1">
 						<div class="card-content white-text">
-							<span class="card-title">Card Title</span>
-							<p>I am a very simple card. I am good at containing small
-								bits of information. I am convenient because I require little
-								markup to use effectively.</p>
-						</div>
-						<div class="card-action">
-							<a href="#">This is a link</a> <a href="#">This is a link</a>
+							<span>대여날짜</span>
+								<div class="input-field col s12">
+									<select>
+										<option value="" disabled selected>대여날짜를 선택해주세요</option>
+										<option value="1">Option 1</option>
+										<option value="2">Option 2</option>
+										<option value="3">Option 3</option>
+									</select>
+								</div>
+								<p>
+								대여지역 선택
+								</p>
+								<select>
+										<option value="" disabled selected>대여날짜를 선택해주세요</option>
+										<option value="1">Option 1</option>
+										<option value="2">Option 2</option>
+										<option value="3">Option 3</option>
+								</select>
+								<a class="waves-effect waves-light btn">button</a>
+								<button class="btn waves-effect waves-light" type="submit"
+									name="action">
+									Submit
+								</button>
 						</div>
 					</div>
 				</div>
