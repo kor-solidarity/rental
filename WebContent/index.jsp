@@ -18,21 +18,23 @@
 <script	src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
 <%@ include file="customer/index_top.jsp" %>
- <c:choose>
-    	<c:when test="${requestScope.flag=='register'}">
-    	<!-- 회원가입 page include -->
-    	
-    	</c:when>
-    	<c:when test="${requestScope.flag=='update'}">
-    	<!-- 회원수정 page include -->
-   
-   
-    	</c:when>
-    	<c:otherwise>
-    	
-    	
-		</c:otherwise>
-    </c:choose>
+
+<%String str=request.getParameter("flag"); %>
+<c:set var="flagvar" value="<%=str %>"/>
+<c:choose>
+	<c:when test="${flagvar == 'register'}">
+	<jsp:include page="customer/register.jsp"/>
+	</c:when>
+	<c:when test="${flagvar == 'update'}">
+	<jsp:include page="customer/update.jsp"/>
+	</c:when>
+	<c:otherwise>
+	
+	</c:otherwise>
+</c:choose>
+
+
+
 <%@ include file="customer/index_bottom.jsp" %>
 </body>
 </html>

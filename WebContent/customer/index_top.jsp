@@ -163,7 +163,7 @@
 				<div class="card-panel hoverable blue accent-2" id="search3">
 					<span class="white-text center">
 						<p>
-						<h5>차종선택</h5>
+						<h4>차종선택</h4>
 						</p>
 					</span>
 				</div>
@@ -270,7 +270,6 @@
 						
 
 						<!-- 로그인 회원가입 버튼 -->
-						
 						<a class="waves-effect col s12 waves-teal btn-flat center" href="index.jsp?flag=update"><span
 							class="blue-text text-lighten-2">정보수정</span></a>
 						<div class="row"></div>
