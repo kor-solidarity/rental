@@ -15,7 +15,8 @@
 
 <div id="modal1" class="modal blue accent-4">
 	<c:choose>
-		<c:when test="${sessionScope.id!='null'}">
+		
+		<c:when test="${sessionScope.id==null}">
 			<form action="customer/login.jsp" method="post">
 				<div class="modal-content">
 					<h4 class="white-text text-darken-2">로그인</h4>
@@ -35,7 +36,7 @@
 				<div class="modal-footer blue accent-2">
 					<a href="#!"
 						class="modal-close waves-effect waves-green btn-flat blue accent-3"><span
-						class="white-text text-darken-2">닫기</span></a> <a href="#!"
+						class="white-text text-darken-2">닫기</span></a> <a href="index.jsp?flag=register"
 						class="modal-action waves-effect waves-green btn-flat blue accent-3"><span
 						class="white-text text-darken-2">회원가입</span></a>
 					<button class="btn col s12 waves-effect waves-light blue accent-3"
@@ -44,7 +45,21 @@
 			</form>
 		</c:when>
 		<c:otherwise>
-		"test"
+			<form action="customer/login.jsp" method="post">
+				<div class="modal-content">
+					<h4 class="white-text text-darken-2">${sessionScope.id}님 환영합니다</h4>
+					
+				</div>
+				<div class="modal-footer blue accent-2">
+					<a href="#!"
+						class="modal-close waves-effect waves-green btn-flat blue accent-3"><span
+						class="white-text text-darken-2">닫기</span></a> <a href="index.jsp?flag=update"
+						class="modal-action waves-effect waves-green btn-flat blue accent-3"><span
+						class="white-text text-darken-2">수정</span></a>
+					<button class="btn col s12 waves-effect waves-light blue accent-3"
+						type="submit" name="action">로그아웃</button>
+				</div>
+			</form>
 		</c:otherwise>
 	</c:choose>
 	
@@ -59,7 +74,7 @@
 </div>
 <!-- navbar안에 넣기 -->
 <div class="row">
-	<form action="search.jsp" method="get" id="search">
+	<form action="customer/search.jsp" method="get" id="search">
 		<div class="row z-depth-2">
 			<!-- 대여지역날짜 선택영역 -->
 			<div class="col s12 l3 push-l2">
@@ -95,7 +110,7 @@
 									<option value="3">Option 3</option>
 								</select>
 								<div class="right-align">
-									<a class="waves-effect waves-light btn">button</a>
+									<a class="waves-effect waves-light btn" id="index_btn_ok1">확인</a>
 								</div>
 							</div>
 						</div>
@@ -135,7 +150,7 @@
 								<option value="3">Option 3</option>
 							</select>
 							<div class="right-align">
-								<a class="waves-effect waves-light btn">button</a>
+								<a class="waves-effect waves-light btn" id="index_btn_ok2">확인</a>
 							</div>
 						</div>
 					</div>
@@ -186,7 +201,7 @@
 								class="black-text">수입</label>
 						</div>
 						<div class="center-align">
-							<a class="waves-effect waves-light btn">button</a>
+							<a class="waves-effect waves-light btn" id="index_btn_ok3">확인</a>
 						</div>
 						
 					</div>
@@ -216,35 +231,61 @@
 <div class="row">	
 	<!-- large 확대시 로그인 패널 -->
    <div class="col l2 push-l10 hide-on-med-and-down">
-		<form action="customer/login.jsp" method="post">
-			<div class="card teal darken-3">
-				<div class="card-content white-text text-darken-2">
-					<!-- id,password입력 영역 -->
-							<div class="input-field col s12">
-								<input id="id" type="text" class="validate white-text text-darken-2" name="id"> <label
-									for="id" class="white-text text-darken-2">아이디</label>
-							</div>
-							<div class="input-field col s12">
-								<input id="password" type="text" class="validate white-text text-darken-2" name="pwd"> <label
-									for="password" class="white-text text-darken-2">패스워드</label>
-							</div>
-						
-					<!-- 로그인 회원가입 버튼 -->
-					<a class="waves-effect col s12 waves-teal btn-flat center"><span class="blue-text text-lighten-2">회원가입</span></a>
-					<div class="row"></div>
-					<button class="btn col s12 waves-effect waves-light" type="submit"
-						name="action">
-						로그인
-					</button>
-					
+		<c:if test="${sessionScope.id==null}">
+			<form action="customer/login.jsp" method="post">
+				<div class="card teal darken-3">
+					<div class="card-content white-text text-darken-2">
+						<!-- id,password입력 영역 -->
+						<div class="input-field col s12">
+							<input id="id" type="text"
+								class="validate white-text text-darken-2" name="id"> <label
+								for="id" class="white-text text-darken-2">아이디</label>
+						</div>
+						<div class="input-field col s12">
+							<input id="password" type="text"
+								class="validate white-text text-darken-2" name="pwd"> <label
+								for="password" class="white-text text-darken-2">패스워드</label>
+						</div>
+
+						<!-- 로그인 회원가입 버튼 -->
+						<a class="waves-effect col s12 waves-teal btn-flat center" href="index.jsp?flag=register"><span
+							class="blue-text text-lighten-2">회원가입</span></a>
+						<div class="row"></div>
+						<button class="btn col s12 waves-effect waves-light" type="submit"
+							name="action">로그인</button>
+
+					</div>
 				</div>
-			</div>
-		</form>
+			</form>
+		</c:if>
+		<c:if test="${sessionScope.id!=null }">
+			<form action="customer/login.jsp" method="post">
+				<div class="card teal darken-3">
+					<div class="card-content white-text text-darken-2">
+						<!-- id,password입력 영역 -->
+						<div class="col s12">
+							<label class="white-text text-darken-2"><h6>${sessionScope.id }님 환영합니다<h6></label>
+						</div>
+						
+
+						<!-- 로그인 회원가입 버튼 -->
+						
+						<a class="waves-effect col s12 waves-teal btn-flat center" href="index.jsp?flag=update"><span
+							class="blue-text text-lighten-2">정보수정</span></a>
+						<div class="row"></div>
+						<button class="btn col s12 waves-effect waves-light" type="submit"
+							name="action">로그아웃</button>
+					
+					</div>
+				</div>
+			</form>
+		</c:if>
 	</div>
 	
 	
 <!-- 컨테이너 패널 -->
     <div class="col s12 l8">
+   
 		
 		
 

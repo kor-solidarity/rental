@@ -16,9 +16,20 @@
 <script type="text/javascript"	src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script	src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
-<%@ include file="index_top.jsp" %>
-
-
-<%@ include file="index_bottom.jsp" %>
+<%@ include file="customer/index_top.jsp" %>
+ <c:choose>
+    	<c:when test="${requestScope.flag=='register'}">
+    	<!-- 회원가입 page include -->
+    	
+    	</c:when>
+    	<c:when test="${requestScope.flag=='update'}">
+    	<!-- 회원수정 page include -->
+    	
+    	</c:when>
+    	<c:otherwise>
+    	<!-- 일반패널 -->
+		</c:otherwise>
+    </c:choose>
+<%@ include file="customer/index_bottom.jsp" %>
 </body>
 </html>

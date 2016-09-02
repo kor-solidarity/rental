@@ -64,6 +64,15 @@ $(document).ready(function(){
 		
 		$("#search").submit();
 	 });
+	 $("#index_btn_ok1").on("click",function(){
+		 $("#card1").hide("fast");
+	 });
+	 $("#index_btn_ok2").on("click",function(){
+		 $("#card2").hide("fast");
+	 });
+	 $("#index_btn_ok3").on("click",function(){
+		 $("#card3").hide("fast");
+	 });
 	 
 
 });
