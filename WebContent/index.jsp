@@ -17,9 +17,6 @@
 <script	src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
 <%@ include file="index_top.jsp" %>
-     
-		 
-		
 
 
 <%@ include file="index_bottom.jsp" %>

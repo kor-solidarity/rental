@@ -35,33 +35,98 @@
 	</form>
 </div>
  
-<!-- 대여날짜 정하기 --> 
-<div id="modal2" class="modal">
-    <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-    </div>
- </div>
-<!-- 반납날짜 정하기 -->
-<div id="modal3" class="modal">
-    <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-    </div>
-</div>
 
 <!-- 패럴렉스 이미지 및 로고 뷰 large에서만 보임 -->
 <div class="parallax-container">
-   <a href="#" class="valign hide-on-med-and-down"><h3 class="white-text center">RENTAL</h3></a>
+   <a href="#" class="valign hide-on-med-and-down"><h1 class="white-text center">RENTAL</h1></a>
    <div class="parallax"><img src="data/main.jpg">
 	</div>
 </div>
+<!-- navbar안에 넣기 -->
+<div class="row">
+
+	<div class="row z-depth-2">
+		<!-- 대여지역날짜 선택영역 -->
+		<div class="col s12 l3 push-l2">
+			<div class="card teal darken-2" id="search1">
+				<div class="card-content">
+					<span class="card-title activator grey-text text-darken-4">
+						<i class="material-icons">location_on</i><span>대여지역</span>
+					</span>
+					<p>
+						<i class="material-icons">av_timer</i><span>대여시간</span>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="col s12 l3 push-l2" id="card1">
+			<div class="row">
+				<div class="card teal lighten-2">
+					<div class="card-content black-text">
+						<span>대여날짜</span>
+						<div class="input-field col s12">
+							<select>
+								<option value="" disabled selected>대여날짜를 선택해주세요</option>
+								<option value="1">Option 1</option>
+								<option value="2">Option 2</option>
+								<option value="3">Option 3</option>
+							</select>
+						</div>
+						<p>대여지역 선택</p>
+						<select>
+							<option value="" disabled selected>대여날짜를 선택해주세요</option>
+							<option value="1">Option 1</option>
+							<option value="2">Option 2</option>
+							<option value="3">Option 3</option>
+						</select> <a class="waves-effect waves-light btn">button</a>
+						<button class="btn waves-effect waves-light" type="submit"
+							name="action">Submit</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 반납지역날짜 선택영역 -->
+		<div class="col s12 l3 push-l2">
+			<div class="card" id="search2">
+				<div class="card-content">
+					<span class="card-title activator grey-text text-darken-4">
+						<i class="material-icons">location_on</i><span>지역</span>
+					</span>
+					<p>
+						<i class="material-icons">av_timer</i><span>시간</span>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="col s12 l3 push-l5" id="card2">
+			<div class="card light-blue lighten-1">
+				<div class="card-content white-text">
+					<span>대여날짜</span>
+					<div class="input-field col s12">
+						<select>
+							<option value="" disabled selected>대여날짜를 선택해주세요</option>
+							<option value="1">Option 1</option>
+							<option value="2">Option 2</option>
+							<option value="3">Option 3</option>
+						</select>
+					</div>
+					<p>대여지역 선택</p>
+					<select>
+						<option value="" disabled selected>대여날짜를 선택해주세요</option>
+						<option value="1">Option 1</option>
+						<option value="2">Option 2</option>
+						<option value="3">Option 3</option>
+					</select> <a class="waves-effect waves-light btn">button</a>
+					<button class="btn waves-effect waves-light" type="submit"
+						name="action">Submit</button>
+				</div>
+			</div>
+		</div>
+		<!--  -->
+		
+	</div>
+</div>
+
 
 <!-- large 크기  영역 뷰-->
 <div class="row">	
@@ -92,13 +157,15 @@
 			</div>
 		</form>
 	</div>
+	
+	
 <!-- large일시 컨테이너 패널 -->
     <div class="col s12 l8">
 		<!-- 컨테이너 영역 -->
 		<div class="row">
 			<!-- 대여정보 버튼영역-->
-			<div class="col s12 l4">
-				<div class="card" id="search1">
+			<!-- <div class="col s12 l4">
+				<div class="card teal lighten-2" id="search1">
 					<div class="card-content">
 						<span class="card-title activator grey-text text-darken-4">
 							<i class="material-icons">location_on</i><span>대여지역</span>
@@ -107,11 +174,11 @@
 							<i class="material-icons">av_timer</i><span>대여시간</span>
 						</p>
 					</div>
-				</div>
+				</div> -->
 				<!-- 대여정보 세부선택영역 -->
-				<div class="col s12 l3" id="card1">
+				<!-- <div class="col s12 l3" id="card1">
 					<div class="row">
-						<div class="card">
+						<div class="card teal lighten-2">
 							<div class="card-content black-text">
 								<span>대여날짜</span>
 								<div class="input-field col s12">
@@ -139,11 +206,11 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> -->
 			</div>
 			<!-- 반납정보 버튼영역 -->
 			<div class="col s12 l4">
-				<div class="card" id="search2">
+				<!-- <div class="card" id="search2">
 					<div class="card-content">
 						<span class="card-title activator grey-text text-darken-4">
 							<i class="material-icons">location_on</i><span>지역</span>
@@ -152,9 +219,9 @@
 							<i class="material-icons">av_timer</i><span>시간</span>
 						</p>
 					</div>
-				</div>
+				</div> -->
 				<!-- 반납정보 세부선택영역 -->
-				<div class="col s12 l3" id="card2">
+				<!-- <div class="col s12 l3" id="card2">
 					<div class="card light-blue lighten-1">
 						<div class="card-content white-text">
 							<span>대여날짜</span>
@@ -182,7 +249,7 @@
 								</button>
 						</div>
 					</div>
-				</div>
+				</div> -->
 			</div>
 				
 			<div class="col s12 l4">
