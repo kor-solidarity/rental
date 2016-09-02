@@ -2,47 +2,68 @@ $(document).ready(function(){
 	$('.parallax').parallax();
 	 $('#modallogin').leanModal();
 	 $('select').material_select();
-	 $('#modalrental').leanModal({
-	      dismissible: true, // Modal can be dismissed by clicking outside of the modal
-	      opacity: .0, // Opacity of modal background
-	      in_duration: 300, // Transition in duration
-	      out_duration: 200, // Transition out duration
-	      starting_top: '4%', // Starting top style attribute
-	      ending_top: '10%', // Ending top style attribute
-	      ready: function() { alert('1'); }, // Callback for Modal open
-	      complete: function() { alert('Closed'); } // Callback for Modal close
-	    }
-	  );
-	 $('#modalreturn').leanModal({
-	      dismissible: true, // Modal can be dismissed by clicking outside of the modal
-	      opacity: .0, // Opacity of modal background
-	      in_duration: 300, // Transition in duration
-	      out_duration: 200, // Transition out duration
-	      starting_top: '4%', // Starting top style attribute
-	      ending_top: '10%', // Ending top style attribute
-	      ready: function() { alert('2'); }, // Callback for Modal open
-	      complete: function() { alert('Closed'); } // Callback for Modal close
-	    }
-	  );
 	 $("#card1").css("display","none");
 	 $("#search1").on("click",function() {
          if ($("#card1").css("display") == "none") {
             $("#card1").show("fast");
             $("#card2").hide("fast");
+            $("#card3").hide("fast");
          }else{
             $("#card1").css("display","none");
          }
 
       });
 	 $("#card2").css("display","none");
+	 $("#card3").css("display","none");
 	 $("#search2").on("click",function() {
          if ($("#card2").css("display") == "none") {
         	 $("#card2").show("fast");
             $("#card1").hide("fast");
+            $("#card3").hide("fast");
          }else{
             $("#card2").css("display","none");
          }
 
       });
+	 $("#search3").on("click",function() {
+         if ($("#card3").css("display") == "none") {
+        	 $("#card3").show("fast");
+        	 $("#card1").hide("fast");
+        	 $("#card2").hide("fast");
+         }else{
+            $("#card3").css("display","none");
+         }
+
+      });
+	 $("#submit").on("click",function(){
+		 var str="";
+		if($("#test1").is(":checked")){
+			str+=$("#test1").val();
+		}
+		if($("#test2").is(":checked")){
+			str+="-"+$("#test2").val();
+		}
+		if($("#test3").is(":checked")){
+			str+=$("#test3").val();
+		}
+		if($("#test4").is(":checked")){
+			str+=$("#test4").val();
+		}
+		if($("#test5").is(":checked")){
+			str+=$("#test5").val();
+		}
+		if($("#test6").is(":checked")){
+			str+=$("#test6").val();
+		}
+		if($("#test7").is(":checked")){
+			str+=$("#test7").val();
+		}
+		if($("#test8").is(":checked")){
+			str+=$("#test8").val();
+		}
+		
+		$("#search").submit();
+	 });
+	 
 
 });
