@@ -20,6 +20,8 @@
 <%@ include file="customer/index_top.jsp" %>
 
 <%String str=request.getParameter("flag"); %>
+
+<!-- flag값에 따라서 업데이트 페이지나 회원가입페이지로 전환 -->
 <c:set var="flagvar" value="<%=str %>"/>
 <c:choose>
 	<c:when test="${flagvar == 'register'}">

@@ -1,34 +1,52 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<!-- 메인에 삽입할 회원가입 페이지 -->
+<!-- id,pwd,이름,주소,전화번호,운전면허 -->
 <div class="row">
-    <form class="col s12">
+    <form class="col s12" action="registerok.jsp" method="post">
       <div class="row">
-        <div class="input-field col s6">
-          <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-          <label for="first_name">First Name</label>
+        <div class="input-field col s8">
+          <input id="ID" type="text" class="validate">
+          <label for="ID">아이디</label>
         </div>
-        <div class="input-field col s6">
-          <input id="last_name" type="text" class="validate">
-          <label for="last_name">Last Name</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s6">
-          <input disabled value="I am not editable" id="disabled" type="text" class="validate">
-          <label for="disabled">Disabled</label>
+        <div class="input-field col s4">
+          <!-- 아이디 체크 부분 -->
         </div>
       </div>
       <div class="row">
         <div class="input-field col s6">
           <input id="password" type="password" class="validate">
-          <label for="password">Password</label>
+          <label for="password">패스워드</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="passwordOK" type="password" class="validate">
+          <label for="passwordOK">패스워드 확인</label>
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s6">
-          <input id="email" type="email" class="validate">
-          <label for="email">Email</label>
+          <input id="name" type="text" class="validate">
+          <label for="name">이름</label>
         </div>
+          <input id="phone" type="text" class="validate">
+          <label for="phone">전화번호</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s8">
+          <input id="address" type="text" class="validate">
+          <label for="address">주소</label>
+        </div>
+        
+      </div>
+      <div class="row">
+        <div class="input-field col s8">
+          <input id="license" type="text" class="validate">
+          <label for="license">운전면허번호</label>
+        </div>
+        
+      </div>
+      <div class="row center-align">
+      <input class="btn-large" type="submit" value="회원가입">
       </div>
     </form>
  </div>
