@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <!--Import Google Icon Font-->
 <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <!-- Compiled and minified CSS -->
@@ -24,10 +25,12 @@
     	</c:when>
     	<c:when test="${requestScope.flag=='update'}">
     	<!-- 회원수정 page include -->
-    	
+   
+   
     	</c:when>
     	<c:otherwise>
-    	<!-- 일반패널 -->
+    	
+    	
 		</c:otherwise>
     </c:choose>
 <%@ include file="customer/index_bottom.jsp" %>

@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!-- large미만 로고 뷰 -->
+<%request.setCharacterEncoding("utf-8"); %>
 <div class="hide-on-large-only">
    <nav>
     <div class="nav-wrapper blue accent-1">
@@ -72,7 +73,7 @@
    <div class="parallax"><img src="data/main.jpg">
 	</div>
 </div>
-<!-- navbar안에 넣기 -->
+<!-- bar 검색영역 -->
 <div class="row">
 	<form action="customer/search.jsp" method="get" id="search">
 		<div class="row z-depth-2">
@@ -159,7 +160,7 @@
 			<!--차량선택영역 -->
 			<div class="col s8 l2 push-l2">
 
-				<div class="card-panel hoverable blue accent-5" id="search3">
+				<div class="card-panel hoverable blue accent-2" id="search3">
 					<span class="white-text center">
 						<p>
 						<h5>차종선택</h5>
@@ -211,7 +212,7 @@
 			<!-- 검색버튼 영역 -->
 			<div class="col s4 l2 push-l2">
 				<a href="#!" id="submit">
-					<div class="card-panel teal">
+					<div class="card-panel blue accent-2">
 						<span class="white-text center">
 							<p>
 							<h4>검색</h4>
@@ -233,7 +234,7 @@
    <div class="col l2 push-l10 hide-on-med-and-down">
 		<c:if test="${sessionScope.id==null}">
 			<form action="customer/login.jsp" method="post">
-				<div class="card teal darken-3">
+				<div class="card blue accent-2">
 					<div class="card-content white-text text-darken-2">
 						<!-- id,password입력 영역 -->
 						<div class="input-field col s12">
