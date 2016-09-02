@@ -30,11 +30,24 @@
 	<c:when test="${flagvar == 'update'}">
 	<jsp:include page="customer/update.jsp"/>
 	</c:when>
-	<c:otherwise>
-	
-	</c:otherwise>
 </c:choose>
 
+<div class="row">
+	<div class="col s12 hide-on-small-only">
+		<div class="col s4">
+		1
+		</div>
+		<div class="col s4">
+		1
+		</div>
+		<div class="col s4">
+		1
+		</div>
+	</div>
+	<div class="col s12 hide-on-med-and-up center-align">
+		<a class="btn-large blue accent-2"><b>이용 방법 확인</b></a>
+	</div>
+</div>
 
 
 <%@ include file="customer/index_bottom.jsp" %>

@@ -24,9 +24,11 @@
         </div>
       </div>
       <div class="row">
+        <div class="input-field col s5">
           <input id="name" type="text" class="validate">
           <label for="name">이름</label>
         </div>
+        <div class="input-field col s5">
           <input id="phone" type="text" class="validate">
           <label for="phone">전화번호</label>
         </div>
@@ -47,6 +49,7 @@
       </div>
       <div class="row center-align">
       <input class="btn-large" type="submit" value="회원가입">
+      <a href="index.jsp" class="btn-large">돌아가기</a>
       </div>
     </form>
  </div>
