@@ -73,6 +73,7 @@ $(document).ready(function(){
 	 $("#index_btn_ok3").on("click",function(){
 		 $("#card3").hide("fast");
 	 });
+	 $('.carousel').carousel();
 	 
 
 });
