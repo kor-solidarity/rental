@@ -35,7 +35,7 @@
 <div class="row">
 	<div class="col s12 hide-on-small-only">
 		<div class="col s4">
-		1
+			
 		</div>
 		<div class="col s4">
 		1
