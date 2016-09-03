@@ -1,12 +1,23 @@
+<%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Calendar"%>
+<%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!-- large미만 로고 뷰 -->
 <%request.setCharacterEncoding("utf-8"); %>
+
+
+
+
+
 <div class="hide-on-large-only">
    <nav>
     <div class="nav-wrapper light-blue darken-3 ">
-      <a href="#!" class="brand-logo center">RENTAL</a>
+      <a href="#!" class="brand-logo center"><% %></a>
       <!-- Modal Trigger -->
       <a href="#modal1" class="button-collapse modal-trigger" id="modallogin"><i class="material-icons">menu</i></a>
     </div>
@@ -73,9 +84,10 @@
    <div class="parallax"><img src="data/main.jpg">
 	</div>
 </div>
+
 <!-- bar 검색영역 -->
 <div class="row">
-	<form action="customer/search.jsp" method="get" id="search">
+	<form action="search.jsp" method="get" id="search">
 		<div class="row z-depth-2">
 			<!-- 대여지역날짜 선택영역 -->
 			<div class="col s12 l3 push-l2">
@@ -95,21 +107,28 @@
 						<div class="card blue accent-5">
 							<div class="card-content white-text">
 								<span>대여날짜</span>
-								<div class="input-field col s12">
-									<select id="period1">
-										<option value="" disabled selected>대여날짜를 선택해주세요</option>
+								<div class="input-field col s12 center-align" id="period1">
+									<select name="period1">
+										<option disabled selected>대여날짜를 선택해주세요</option>
+										<option></option>
+										<option></option>
+										<option></option>
+										<option></option>
+										<option></option>
+										<option></option>
+										<option></option>
+									</select>
+									
+								</div>
+								<p>대여지역 선택</p>
+								<div class="input-field col s12 center-align" id="area1">
+									<select>
+										<option value="" disabled selected>대여지역을 선택해주세요</option>
 										<option value="1">Option 1</option>
 										<option value="2">Option 2</option>
 										<option value="3">Option 3</option>
 									</select>
 								</div>
-								<p>대여지역 선택</p>
-								<select id="area1">
-									<option value="" disabled selected>대여날짜를 선택해주세요</option>
-									<option value="1">Option 1</option>
-									<option value="2">Option 2</option>
-									<option value="3">Option 3</option>
-								</select>
 								<div class="right-align">
 									<a class="waves-effect waves-light btn" id="index_btn_ok1">확인</a>
 								</div>
@@ -123,10 +142,10 @@
 				<div class="card hoverable green lighten-3" id="search2">
 					<div class="card-content  white-text">
 						<span class="card-title activator"> <i
-							class="material-icons">location_on</i><span>지역</span>
+							class="material-icons">location_on</i><span>반납지역</span>
 						</span>
 						<p>
-							<i class="material-icons">av_timer</i><span>시간</span>
+							<i class="material-icons">av_timer</i><span>반납시간</span>
 						</p>
 					</div>
 				</div>
@@ -134,22 +153,29 @@
 				<div class="col s12" id="card2">
 					<div class="card blue accent-5">
 						<div class="card-content white-text">
-							<span>대여날짜</span>
-							<div class="input-field col s12">
-								<select id="period2">
-									<option value="" disabled selected>대여날짜를 선택해주세요</option>
+							<span>반납날짜</span>
+							<div class="input-field col s12"  id="period2">
+								<select name="period2" class="white-text">
+									<option value="" disabled selected>대여 날짜를 먼저 선택해주세요</option>
+									<option></option>
+									<option></option>
+									<option></option>
+									<option></option>
+									<option></option>
+									<option></option>
+									<option></option>
+								</select>
+							</div>
+							<p>반납지역 선택</p>
+							<div class="input-field col s12" id="area2">
+								<select class="white-text">
+									<option value="" disabled selected class="white-text">반납지역을
+										선택해주세요</option>
 									<option value="1">Option 1</option>
 									<option value="2">Option 2</option>
 									<option value="3">Option 3</option>
 								</select>
 							</div>
-							<p>대여지역 선택</p>
-							<select id="area2">
-								<option value="" disabled selected>대여날짜를 선택해주세요</option>
-								<option value="1">Option 1</option>
-								<option value="2">Option 2</option>
-								<option value="3">Option 3</option>
-							</select>
 							<div class="right-align">
 								<a class="waves-effect waves-light btn" id="index_btn_ok2">확인</a>
 							</div>
@@ -222,7 +248,6 @@
 					</div>
 				</a>
 			</div>
-			<input type="hidden" name="period">
 		</div>
 	</form>
 </div>
