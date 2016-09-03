@@ -36,30 +36,9 @@ $(document).ready(function(){
 
       });
 	 $("#submit").on("click",function(){
-		 var str="";
-		if($("#test1").is(":checked")){
-			str+=$("#test1").val();
-		}
-		if($("#test2").is(":checked")){
-			str+="-"+$("#test2").val();
-		}
-		if($("#test3").is(":checked")){
-			str+=$("#test3").val();
-		}
-		if($("#test4").is(":checked")){
-			str+=$("#test4").val();
-		}
-		if($("#test5").is(":checked")){
-			str+=$("#test5").val();
-		}
-		if($("#test6").is(":checked")){
-			str+=$("#test6").val();
-		}
-		if($("#test7").is(":checked")){
-			str+=$("#test7").val();
-		}
-		if($("#test8").is(":checked")){
-			str+=$("#test8").val();
+		if($('#period2 option:selected').val()==""){
+			alert("1");
+			return;
 		}
 		
 		$("#search").submit();
@@ -84,7 +63,9 @@ $(document).ready(function(){
 	}
 	 
 	 $("#period1").on("change",function(){
+		 	
 		 	var date=new Date($('#period1 option:selected').val());
+		 	$("#rental_date").text((date.getMonth()+1)+"월"+date.getDate()+"일");
 		 	$("#period2").children().eq(0).children().eq(2).children().eq(0).text("반납 날짜를 선택해주세요");
 		 	
 		 	for(var i=1;i<8;i++){
@@ -93,6 +74,15 @@ $(document).ready(function(){
 				$("#period2").children().eq(0).children().eq(3).children().eq(i).val(date.getFullYear()+"/"+(date.getMonth()+1)+"/"+(date.getDate()+i));
 		}
 	 });
+	 $("#period2").on("change",function(){
+		 
+		 if($('#period2 option:selected').val()!=""){
+			 var date=new Date($('#period2 option:selected').val());
+			 $("#return_date").text((date.getMonth()+1)+"월"+date.getDate()+"일");
+		 }
+		 
+	 });
+	 
 	 
 	 
 	 
