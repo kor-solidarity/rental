@@ -31,7 +31,7 @@
 	<jsp:include page="customer/update.jsp"/>
 	</c:when>
 </c:choose>
-
+<!-- main panel 영역 삽입 -->
 <div class="row">
 	<div class="col s12 hide-on-small-only">
 		<div class="col s4">
