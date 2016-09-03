@@ -38,9 +38,9 @@
 					<a href="#!"
 						class="modal-close waves-effect waves-green btn-flat deep-orange lighten-2"><span
 						class="white-text text-darken-2">닫기</span></a> <a href="index.jsp?flag=register"
-						class="modal-action waves-effect waves-green btn-flat deep-orange lighten-2"><span
+						class="modal-action waves-effect waves-green btn-flat light-blue darken-3"><span
 						class="white-text text-darken-2">회원가입</span></a>
-					<button class="btn col s12 waves-effect waves-light deep-orange lighten-2"
+					<button class="btn col s12 waves-effect waves-light light-blue darken-3"
 						type="submit" name="action">로그인</button>
 				</div>
 			</form>
