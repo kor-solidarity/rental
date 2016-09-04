@@ -189,35 +189,35 @@
 				<div class="card" id="card3">
 					<div class="row">
 						<div class="card-content col s6">
-							<input type="checkbox" id="test1" name="option" value="size1"/> <label for="test1"
+							<input type="checkbox" id="test1" name="option" value="1"/> <label for="test1"
 								class="black-text">경차</label>
 						</div>
 						<div class="card-content col s6">
-							<input type="checkbox" id="test2" name="option" value="size2"/> <label for="test2"
+							<input type="checkbox" id="test2" name="option" value="2"/> <label for="test2"
 								class="black-text">소형</label>
 						</div>
 						<div class="card-content col s6">
-							<input type="checkbox" id="test3" name="option" value="size3"/> <label for="test3"
+							<input type="checkbox" id="test3" name="option" value="3"/> <label for="test3"
 								class="black-text">준중형</label>
 						</div>
 						<div class="card-content col s6">
-							<input type="checkbox" id="test4" name="option" value="size4"/> <label for="test4"
+							<input type="checkbox" id="test4" name="option" value="4"/> <label for="test4"
 								class="black-text">중형</label>
 						</div>
 						<div class="card-content col s6">
-							<input type="checkbox" id="test5" name="option" value="size5"/> <label for="test5"
+							<input type="checkbox" id="test5" name="option" value="5"/> <label for="test5"
 								class="black-text">대형</label>
 						</div>
 						<div class="card-content col s6">
-							<input type="checkbox" id="test6" name="option" value="size6"/> <label for="test6"
+							<input type="checkbox" id="test6" name="option" value="6"/> <label for="test6"
 								class="black-text">SUV</label>
 						</div>
 						<div class="card-content col s6">
-							<input type="checkbox" id="test7" name="option" value="size7"/> <label for="test7"
+							<input type="checkbox" id="test7" name="option" value="7"/> <label for="test7"
 								class="black-text">승합</label>
 						</div>
 						<div class="card-content col s6">
-							<input type="checkbox" id="test8" name="option" value="size8"/> <label for="test8"
+							<input type="checkbox" id="test8" name="option" value="8"/> <label for="test8"
 								class="black-text">수입</label>
 						</div>
 						<div class="center-align">

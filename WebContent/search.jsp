@@ -7,13 +7,14 @@
 <%
 rentBean.setRent_sdate(request.getParameter("period1"));
 rentBean.setRent_edate(request.getParameter("period2"));
+rentBean.setType(request.getParameterValues("option"));
 %>
 <jsp:useBean id="carprocess" class="rent.car.CarProcessDao"></jsp:useBean>
 
 
 <c:choose>
 	<c:when test="${param.period1 != null && param.period2 != null && param.option != null}">
-	 <c:set var="dto" value="<%=carprocess.searchCarDataAll(rentBean)%>"/>
+	 <c:set var="dto" value="<%=carprocess.searchCarDataType(rentBean)%>"/>
 	 
 	</c:when>
 	<c:when test="${param.period1 != null && param.period2 != null && param.option == null}">

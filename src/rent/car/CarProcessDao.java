@@ -41,6 +41,36 @@ public class CarProcessDao {
 		}
 		return list;
 	}
+	//type이 포함된 데이터 찾아올경우
+	public List searchCarDataType(RentBean bean){
+		SqlSession sqlSession = factory.openSession();
+		List list=null,list2 = null;
+		
+		try {
+			CarSqlMapperInter inter = (CarSqlMapperInter)sqlSession.getMapper(CarSqlMapperInter.class);
+			String[] type=bean.getType();
+			
+			list = inter.searchCarDataAll(bean);
+			for(int i=0;i<list.size();i++){
+				CarDto dto=(CarDto)list.get(i);
+				boolean check=false;
+				for(String t:type){
+					if(dto.getType().equals(t)){
+						list2.add(list.get(i));
+						break;
+					}
+				}
+			
+				
+				
+			}
+		} catch (Exception e) {
+			System.out.println("searchCarDataAll err" + e);
+		}finally {
+			if(sqlSession != null) sqlSession.close();
+		}
+		return list2;
+	}
 	public CarDto searchCarData(RentBean bean){
 		SqlSession sqlSession = factory.openSession();
 		CarDto dto=null;

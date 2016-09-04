@@ -58,6 +58,14 @@ public class RentBean {
 	public void setInsurace(String insurace) {
 		this.insurace = insurace;
 	}
-	
+	private String type[];
+
+	public String[] getType() {
+		return type;
+	}
+
+	public void setType(String type[]) {
+		this.type = type;
+	}
 	
 }
