@@ -99,7 +99,7 @@
 						<p>
 							<i class="material-icons">av_timer</i><span>대여날짜</span>
 						</p>
-						<h5 class="white-text" id="rental_date"></h5>
+						<h5 class="white-text" id="rental_date">대여날짜를 선택해주세요</h5>
 					</div>
 				</div>
 				<!-- 대여지역날짜 세부선택영역 -->
