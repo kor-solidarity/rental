@@ -137,7 +137,7 @@
 						<p>
 							<i class="material-icons">av_timer</i><span>반납날짜</span>
 						</p>
-						<h5 class="white-text" id="return_date"></h5>
+						<h5 class="white-text" id="return_date">반납날짜를 선택해주세요</h5>
 					</div>
 				</div>
 				<!-- 반납선택 세부선택영역 -->

@@ -18,10 +18,10 @@ public class SqlMapConfig {
    //annotation 사용 시----------------------------부터
    Class[] mapper = {
 		   rent.car.CarSqlMapperInter.class,
-		   /*rent.rent.RentSqlMapperInter.class,
+		   rent.rent.RentSqlMapperInter.class,
 		   rent.company.CompanySqlMapperInter.class,
 		   rent.customer.CustomerSqlMapperInter.class,
-		   rent.maintenence.MaintenenceSqlMapperInter.class*/
+		   rent.maintenence.MaintenenceSqlMapperInter.class
    };
    
    for(Class m:mapper){

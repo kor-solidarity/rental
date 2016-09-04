@@ -19,9 +19,14 @@
 <script type="text/javascript" src="js/script.js"></script>
 <%@ include file="customer/index_top.jsp" %>
 <script>
-$(document).ready(function(){
-	$("#period1 option:eq(1)").click();
-});</script>
+$("#rental_date").text("대여날짜 "+"<%=request.getParameter("period1")%>");
+$("#return_date").text("반납날짜 "+"<%=request.getParameter("period2")%>");
+
+
+
+
+
+</script>
 
 
 <%@ include file="customer/index_bottom.jsp" %>

@@ -1,15 +1,8 @@
 package rent.car;
 
 public class CarBean {
-	private String car_id, name, type, manufacturer, color, spec, price, car_year, p_price, r_count, image, com_id;
-
-	public String getImage() {
-		return image;
-	}
-
-	public void setImage(String image) {
-		this.image = image;
-	}
+	private String car_id, car_name, type, manufacturer, color, spec, price, year, pprice, rcount, image, com_id,
+			rentyn;
 
 	public String getCar_id() {
 		return car_id;
@@ -19,12 +12,12 @@ public class CarBean {
 		this.car_id = car_id;
 	}
 
-	public String getName() {
-		return name;
+	public String getCar_name() {
+		return car_name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setCar_name(String car_name) {
+		this.car_name = car_name;
 	}
 
 	public String getType() {
@@ -67,28 +60,36 @@ public class CarBean {
 		this.price = price;
 	}
 
-	public String getCar_year() {
-		return car_year;
+	public String getYear() {
+		return year;
 	}
 
-	public void setCar_year(String car_year) {
-		this.car_year = car_year;
+	public void setYear(String year) {
+		this.year = year;
 	}
 
-	public String getP_price() {
-		return p_price;
+	public String getPprice() {
+		return pprice;
 	}
 
-	public void setP_price(String p_price) {
-		this.p_price = p_price;
+	public void setPprice(String pprice) {
+		this.pprice = pprice;
 	}
 
-	public String getR_count() {
-		return r_count;
+	public String getRcount() {
+		return rcount;
 	}
 
-	public void setR_count(String r_count) {
-		this.r_count = r_count;
+	public void setRcount(String rcount) {
+		this.rcount = rcount;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 	public String getCom_id() {
@@ -98,5 +99,13 @@ public class CarBean {
 	public void setCom_id(String com_id) {
 		this.com_id = com_id;
 	}
-	
+
+	public String getRentyn() {
+		return rentyn;
+	}
+
+	public void setRentyn(String rentyn) {
+		this.rentyn = rentyn;
+	}
+
 }

@@ -16,9 +16,23 @@ public class CarProcessDao {
 		List list = null;
 		try {
 			CarSqlMapperInter inter = (CarSqlMapperInter)sqlSession.getMapper(CarSqlMapperInter.class);
-			list = inter.selectDataAll();	
+			list = inter.selectCarAll();
 		} catch (Exception e) {
-			System.out.println("selectDataAll err" + e);
+			System.out.println("selectCarAll err" + e);
+		}finally {
+			if(sqlSession != null) sqlSession.close();
+		}
+		return list;
+	}
+	
+	public List searchCar(){
+		SqlSession sqlSession = factory.openSession();
+		List list = null;
+		try {
+			CarSqlMapperInter inter = (CarSqlMapperInter)sqlSession.getMapper(CarSqlMapperInter.class);
+			list = inter.searchCar();
+		} catch (Exception e) {
+			System.out.println("searchCar err" + e);
 		}finally {
 			if(sqlSession != null) sqlSession.close();
 		}
@@ -30,9 +44,9 @@ public class CarProcessDao {
 		CarDto dto = null;
 		try {
 			CarSqlMapperInter inter = (CarSqlMapperInter)sqlSession.getMapper(CarSqlMapperInter.class);
-			dto = inter.selectDataById(id); 
+			dto = inter.selectCarById(id); 
 		} catch (Exception e) {
-			System.out.println("selectDataById err" + e);
+			System.out.println("selectCarById err" + e);
 		}finally {
 			if(sqlSession != null) sqlSession.close();
 		}
@@ -44,10 +58,10 @@ public class CarProcessDao {
 		SqlSession sqlSession = factory.openSession();
 		try {
 			CarSqlMapperInter inter = (CarSqlMapperInter)sqlSession.getMapper(CarSqlMapperInter.class);
-			if(inter.insertData(dto) > 0) b = true; 
+			if(inter.insertCar(dto) > 0) b = true; 
 			sqlSession.commit();
 		} catch (Exception e) {
-			System.out.println("insertData err" + e);
+			System.out.println("insertCar err" + e);
 			sqlSession.rollback();
 		}finally {
 			if(sqlSession != null) sqlSession.close();
@@ -67,10 +81,10 @@ public class CarProcessDao {
 				return b;
 			}*/
 			
-			if(inter.updateData(dto) > 0) b = true;
+			if(inter.updateCar(dto) > 0) b = true;
 			sqlSession.commit();
 		} catch (Exception e) {
-			System.out.println("updateData err" + e);
+			System.out.println("updateCar err" + e);
 			sqlSession.rollback();
 		}finally {
 			if(sqlSession != null) sqlSession.close();
@@ -83,10 +97,10 @@ public class CarProcessDao {
 		SqlSession sqlSession = factory.openSession();
 		try {
 			CarSqlMapperInter inter = (CarSqlMapperInter)sqlSession.getMapper(CarSqlMapperInter.class);
-			if(inter.deleteData(id) > 0) b = true;
+			if(inter.deleteCar(id) > 0) b = true;
 			sqlSession.commit();
 		} catch (Exception e) {
-			System.out.println("insertData err" + e);
+			System.out.println("deleteCar err" + e);
 			sqlSession.rollback();
 		}finally {
 			if(sqlSession != null) sqlSession.close();
