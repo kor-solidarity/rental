@@ -17,7 +17,7 @@
 <div class="hide-on-large-only">
    <nav>
     <div class="nav-wrapper light-blue darken-3 ">
-      <a href="#!" class="brand-logo center">RENTAL</a>
+      <a href="index.jsp" class="brand-logo center">RENTAL</a>
       <!-- Modal Trigger -->
       <a href="#modal1" class="button-collapse modal-trigger" id="modallogin"><i class="material-icons">menu</i></a>
     </div>
@@ -83,7 +83,7 @@
 
 <!-- 패럴렉스 이미지 및 로고 뷰 large에서만 보임 -->
 <div class="parallax-container">
-   <a href="#" class="valign hide-on-med-and-down"><h1 class="white-text center">RENTAL</h1></a>
+   <a href="index.jsp" class="valign hide-on-med-and-down"><h1 class="white-text center">RENTAL</h1></a>
    <div class="parallax"><img src="data/main.jpg">
 	</div>
 </div>

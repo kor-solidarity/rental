@@ -6,7 +6,10 @@ import java.util.Map;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
+import rent.customer.SearchBean;
 import rent.mybatis.SqlMapConfig;
+import rent.rent.RentBean;
+import rent.rent.RentDto;
 
 public class CarProcessDao {
 	private SqlSessionFactory factory = SqlMapConfig.getSqlSession();
@@ -19,6 +22,33 @@ public class CarProcessDao {
 			list = inter.selectCarAll();
 		} catch (Exception e) {
 			System.out.println("selectCarAll err" + e);
+		}finally {
+			if(sqlSession != null) sqlSession.close();
+		}
+		return list;
+	}
+	
+	public List searchCarDataAll(RentBean bean){
+		SqlSession sqlSession = factory.openSession();
+		List list = null;
+		try {
+			CarSqlMapperInter inter = (CarSqlMapperInter)sqlSession.getMapper(CarSqlMapperInter.class);
+			list = inter.searchCarDataAll(bean);
+		} catch (Exception e) {
+			System.out.println("searchCarDataAll err" + e);
+		}finally {
+			if(sqlSession != null) sqlSession.close();
+		}
+		return list;
+	}
+	public List searchCarDataSize(RentBean bean){
+		SqlSession sqlSession = factory.openSession();
+		List list = null;
+		try {
+			CarSqlMapperInter inter = (CarSqlMapperInter)sqlSession.getMapper(CarSqlMapperInter.class);
+			list = inter.searchCarDataAll(bean);
+		} catch (Exception e) {
+			System.out.println("searchCarDataAll err" + e);
 		}finally {
 			if(sqlSession != null) sqlSession.close();
 		}

@@ -1,5 +1,26 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="rent.car.CarDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<jsp:useBean id="rentBean" class="rent.rent.RentBean"/>
+<%
+rentBean.setRent_sdate(request.getParameter("period1"));
+rentBean.setRent_edate(request.getParameter("period2"));
+%>
+<jsp:useBean id="carprocess" class="rent.car.CarProcessDao"></jsp:useBean>
+
+
+<c:choose>
+	<c:when test="${param.period1 != null && param.period2 != null && param.option != null}">
+	 <c:set var="dto" value="<%=carprocess.searchCarDataAll(rentBean)%>"/>
+	 
+	</c:when>
+	<c:when test="${param.period1 != null && param.period2 != null && param.option == null}">
+	<c:set var="dto" value="<%=carprocess.searchCarDataAll(rentBean)%>"/>
+	</c:when>
+</c:choose>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,14 +40,26 @@
 <script type="text/javascript" src="js/script.js"></script>
 <%@ include file="customer/index_top.jsp" %>
 <script>
-$("#rental_date").text("대여날짜 "+"<%=request.getParameter("period1")%>");
-$("#return_date").text("반납날짜 "+"<%=request.getParameter("period2")%>");
-
-
-
-
-
+$("#rental_date").text("대여날짜 "+"${param.period1}");
+$("#return_date").text("반납날짜 "+"${param.period2}");
 </script>
+<c:forEach var="i" items="${dto}" >
+	<div class="card medium">
+		<div class="card-image">
+              <img src="data/${i.image}">
+              <span class="card-title">${i.car_name}</span>
+            </div>
+            <div class="card-content">
+              <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+            </div>
+	</div>
+</c:forEach>
+
+
 
 
 <%@ include file="customer/index_bottom.jsp" %>
