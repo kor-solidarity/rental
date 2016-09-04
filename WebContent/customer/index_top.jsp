@@ -1,12 +1,23 @@
+<%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Calendar"%>
+<%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!-- large미만 로고 뷰 -->
 <%request.setCharacterEncoding("utf-8"); %>
+
+
+
+
+
 <div class="hide-on-large-only">
    <nav>
-    <div class="nav-wrapper blue accent-1">
-      <a href="#!" class="brand-logo center">RENTAL</a>
+    <div class="nav-wrapper light-blue darken-3 ">
+      <a href="#!" class="brand-logo center"><% %></a>
       <!-- Modal Trigger -->
       <a href="#modal1" class="button-collapse modal-trigger" id="modallogin"><i class="material-icons">menu</i></a>
     </div>
@@ -14,7 +25,7 @@
 </div>
   <!-- Modal Structure 로그인 창-->
 
-<div id="modal1" class="modal blue accent-4">
+<div id="modal1" class="modal teal accent-4">
 	<c:choose>
 		
 		<c:when test="${sessionScope.id==null}">
@@ -34,13 +45,13 @@
 					</div>
 					</p>
 				</div>
-				<div class="modal-footer blue accent-2">
+				<div class="modal-footer teal accent-4">
 					<a href="#!"
-						class="modal-close waves-effect waves-green btn-flat blue accent-3"><span
+						class="modal-close waves-effect waves-green btn-flat deep-orange lighten-2"><span
 						class="white-text text-darken-2">닫기</span></a> <a href="index.jsp?flag=register"
-						class="modal-action waves-effect waves-green btn-flat blue accent-3"><span
+						class="modal-action waves-effect waves-green btn-flat light-blue darken-3"><span
 						class="white-text text-darken-2">회원가입</span></a>
-					<button class="btn col s12 waves-effect waves-light blue accent-3"
+					<button class="btn col s12 waves-effect waves-light light-blue darken-3"
 						type="submit" name="action">로그인</button>
 				</div>
 			</form>
@@ -73,13 +84,14 @@
    <div class="parallax"><img src="data/main.jpg">
 	</div>
 </div>
+
 <!-- bar 검색영역 -->
 <div class="row">
-	<form action="customer/search.jsp" method="get" id="search">
+	<form action="search.jsp" method="get" id="search">
 		<div class="row z-depth-2">
 			<!-- 대여지역날짜 선택영역 -->
 			<div class="col s12 l3 push-l2">
-				<div class="card hoverable blue accent-4" id="search1">
+				<div class="card hoverable green lighten-3" id="search1">
 					<div class="card-content white-text">
 						<span class="card-title activator"> <i
 							class="material-icons">location_on</i><span>대여지역</span>
@@ -95,21 +107,28 @@
 						<div class="card blue accent-5">
 							<div class="card-content white-text">
 								<span>대여날짜</span>
-								<div class="input-field col s12">
-									<select id="period1">
-										<option value="" disabled selected>대여날짜를 선택해주세요</option>
+								<div class="input-field col s12 center-align" id="period1">
+									<select name="period1">
+										<option disabled selected>대여날짜를 선택해주세요</option>
+										<option></option>
+										<option></option>
+										<option></option>
+										<option></option>
+										<option></option>
+										<option></option>
+										<option></option>
+									</select>
+									
+								</div>
+								<p>대여지역 선택</p>
+								<div class="input-field col s12 center-align" id="area1">
+									<select>
+										<option value="" disabled selected>대여지역을 선택해주세요</option>
 										<option value="1">Option 1</option>
 										<option value="2">Option 2</option>
 										<option value="3">Option 3</option>
 									</select>
 								</div>
-								<p>대여지역 선택</p>
-								<select id="area1">
-									<option value="" disabled selected>대여날짜를 선택해주세요</option>
-									<option value="1">Option 1</option>
-									<option value="2">Option 2</option>
-									<option value="3">Option 3</option>
-								</select>
 								<div class="right-align">
 									<a class="waves-effect waves-light btn" id="index_btn_ok1">확인</a>
 								</div>
@@ -120,13 +139,13 @@
 			</div>
 			<!-- 반납지역날짜 카드영역 -->
 			<div class="col s12 l3 push-l2">
-				<div class="card hoverable blue accent-4" id="search2">
+				<div class="card hoverable green lighten-3" id="search2">
 					<div class="card-content  white-text">
 						<span class="card-title activator"> <i
-							class="material-icons">location_on</i><span>지역</span>
+							class="material-icons">location_on</i><span>반납지역</span>
 						</span>
 						<p>
-							<i class="material-icons">av_timer</i><span>시간</span>
+							<i class="material-icons">av_timer</i><span>반납시간</span>
 						</p>
 					</div>
 				</div>
@@ -134,22 +153,29 @@
 				<div class="col s12" id="card2">
 					<div class="card blue accent-5">
 						<div class="card-content white-text">
-							<span>대여날짜</span>
-							<div class="input-field col s12">
-								<select id="period2">
-									<option value="" disabled selected>대여날짜를 선택해주세요</option>
+							<span>반납날짜</span>
+							<div class="input-field col s12"  id="period2">
+								<select name="period2" class="white-text">
+									<option value="" disabled selected>대여 날짜를 먼저 선택해주세요</option>
+									<option></option>
+									<option></option>
+									<option></option>
+									<option></option>
+									<option></option>
+									<option></option>
+									<option></option>
+								</select>
+							</div>
+							<p>반납지역 선택</p>
+							<div class="input-field col s12" id="area2">
+								<select class="white-text">
+									<option value="" disabled selected class="white-text">반납지역을
+										선택해주세요</option>
 									<option value="1">Option 1</option>
 									<option value="2">Option 2</option>
 									<option value="3">Option 3</option>
 								</select>
 							</div>
-							<p>대여지역 선택</p>
-							<select id="area2">
-								<option value="" disabled selected>대여날짜를 선택해주세요</option>
-								<option value="1">Option 1</option>
-								<option value="2">Option 2</option>
-								<option value="3">Option 3</option>
-							</select>
 							<div class="right-align">
 								<a class="waves-effect waves-light btn" id="index_btn_ok2">확인</a>
 							</div>
@@ -160,7 +186,7 @@
 			<!--차량선택영역 -->
 			<div class="col s8 l2 push-l2">
 
-				<div class="card-panel hoverable blue accent-2" id="search3">
+				<div class="card-panel hoverable teal accent-4" id="search3">
 					<span class="white-text center">
 						<p>
 						<h4>차종선택</h4>
@@ -212,7 +238,7 @@
 			<!-- 검색버튼 영역 -->
 			<div class="col s4 l2 push-l2">
 				<a href="#!" id="submit">
-					<div class="card-panel blue accent-2">
+					<div class="card-panel deep-orange lighten-2">
 						<span class="white-text center">
 							<p>
 							<h4>검색</h4>
@@ -222,7 +248,6 @@
 					</div>
 				</a>
 			</div>
-			<input type="hidden" name="period">
 		</div>
 	</form>
 </div>
@@ -234,7 +259,7 @@
    <div class="col l2 push-l10 hide-on-med-and-down">
 		<c:if test="${sessionScope.id==null}">
 			<form action="customer/login.jsp" method="post">
-				<div class="card blue accent-2">
+				<div class="card teal accent-4">
 					<div class="card-content white-text text-darken-2">
 						<!-- id,password입력 영역 -->
 						<div class="input-field col s12">
@@ -249,10 +274,10 @@
 						</div>
 
 						<!-- 로그인 회원가입 버튼 -->
-						<a class="waves-effect col s12 waves-teal btn-flat center" href="index.jsp?flag=register"><span
-							class="blue-text text-lighten-2">회원가입</span></a>
+						<a class="waves-effect col s12 waves-teal btn-flat teal accent-4 center" href="index.jsp?flag=register"><span
+							class="white-text text-lighten-2">회원가입</span></a>
 						<div class="row"></div>
-						<button class="btn col s12 waves-effect waves-light" type="submit"
+						<button class="btn col s12 waves-effect waves-light deep-orange lighten-2" type="submit"
 							name="action">로그인</button>
 
 					</div>
@@ -261,7 +286,7 @@
 		</c:if>
 		<c:if test="${sessionScope.id!=null }">
 			<form action="customer/login.jsp" method="post">
-				<div class="card teal darken-3">
+				<div class="card teal accent-4">
 					<div class="card-content white-text text-darken-2">
 						<!-- id,password입력 영역 -->
 						<div class="col s12">
@@ -270,10 +295,10 @@
 						
 
 						<!-- 로그인 회원가입 버튼 -->
-						<a class="waves-effect col s12 waves-teal btn-flat center" href="index.jsp?flag=update"><span
-							class="blue-text text-lighten-2">정보수정</span></a>
+						<a class="waves-effect col s12 waves-teal btn-flat teal accent-4 center" href="index.jsp?flag=update"><span
+							class="white-text text-lighten-2">정보수정</span></a>
 						<div class="row"></div>
-						<button class="btn col s12 waves-effect waves-light" type="submit"
+						<button class="btn col s12 waves-effect waves-light deep-orange lighten-2" type="submit"
 							name="action">로그아웃</button>
 					
 					</div>

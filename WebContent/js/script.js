@@ -73,6 +73,30 @@ $(document).ready(function(){
 	 $("#index_btn_ok3").on("click",function(){
 		 $("#card3").hide("fast");
 	 });
+	 $('.carousel').carousel();
 	 
-
+	 
+	 var myDate2 = new Date();
+	for(var i=1;i<8;i++){
+			$("#period1").children().eq(0).children().eq(2).children().eq(i).text(""+(myDate2.getMonth()+1)+"월"+(myDate2.getDate()+i-1)+"일");
+			$("#period1").children().eq(0).children().eq(2).children().eq(i).attr("class","teal-text");
+			$("#period1").children().eq(0).children().eq(3).children().eq(i).val(myDate2.getFullYear()+"/"+(myDate2.getMonth()+1)+"/"+(myDate2.getDate()+i-1));
+	}
+	 
+	 $("#period1").on("change",function(){
+		 	var date=new Date($('#period1 option:selected').val());
+		 	$("#period2").children().eq(0).children().eq(2).children().eq(0).text("반납 날짜를 선택해주세요");
+		 	
+		 	for(var i=1;i<8;i++){
+				$("#period2").children().eq(0).children().eq(2).children().eq(i).text(""+(date.getMonth()+1)+"월"+(date.getDate()+i)+"일");
+				$("#period2").children().eq(0).children().eq(2).children().eq(i).attr("class","teal-text");
+				$("#period2").children().eq(0).children().eq(3).children().eq(i).val(date.getFullYear()+"/"+(date.getMonth()+1)+"/"+(date.getDate()+i));
+		}
+	 });
+	 
+	 
+	 
+	 
 });
+
+
