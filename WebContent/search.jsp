@@ -3,7 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<jsp:useBean id="rentBean" class="rent.rent.RentBean"/>
+<jsp:useBean id="rentBean" class="rent.rent.RentBean" scope="session"/>
 <%
 rentBean.setRent_sdate(request.getParameter("period1"));
 rentBean.setRent_edate(request.getParameter("period2"));
@@ -45,7 +45,7 @@ $("#return_date").text("반납날짜 "+"${param.period2}");
 </script>
 
 <c:forEach var="s" items="${dto}">
-	<a href="rent.jsp?car_id=${s.car_id}">
+	<a href="searchdetail.jsp?car_id=${s.car_id}">
 	<div class="col s12 m12">
 		<div class="card horizontal">
 			<div class="card-image">

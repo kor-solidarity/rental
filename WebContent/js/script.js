@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	$('.parallax').parallax();	//상단이미지 parallax 효과
 	 $('#modallogin').leanModal();  //로그인 모달창열기
-	 
+	 $('#modallogin2').leanModal();  //로그인 모달창열기
 	 $('select').material_select(); //select 박스에 material효과주기
 	
 	 
@@ -47,11 +47,11 @@ $(document).ready(function(){
 		 var edate=new Date($('#period2 option:selected').val());
 		
 		if(edate=="Invalid Date"||sdate=="Invalid Date"||edate==""||sdate==""){
-			alert("1");
+			Materialize.toast('대여날짜를 선택해주세요', 3000, 'rounded');
 			return;
 		}
 		if(edate<=sdate){
-			alert("2");
+			Materialize.toast('대여날짜를 선택해주세요', 3000, 'rounded');
 			return;
 		}
 		

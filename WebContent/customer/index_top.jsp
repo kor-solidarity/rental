@@ -31,28 +31,39 @@
 		<c:when test="${sessionScope.id==null}">
 			<form action="customer/login.jsp" method="post">
 				<div class="modal-content">
-					<h4 class="white-text text-darken-2">로그인</h4>
+					<h4 class="white-text text-darken-2 center">로그인</h4>
 					<p>
-					<div class="input-field col s12">
+					<div class="row">
+					<div class="input-field col s12 m6 push-m3">
 						<input id="id" type="text"
 							class="validate white-text text-darken-2" name="id"> <label
 							for="id" class="white-text text-darken-2">아이디</label>
 					</div>
-					<div class="input-field col s12">
+					</div>
+					<div class="row">
+					<div class="input-field col s12 m6 push-m3">
 						<input id="password" type="password"
 							class="validate white-text text-darken-2" name="pwd"> <label
 							for="password" class="white-text">패스워드</label>
 					</div>
+					</div>
 					</p>
 				</div>
 				<div class="modal-footer teal accent-4">
-					<a href="#!"
-						class="modal-close waves-effect waves-green btn-flat deep-orange lighten-2"><span
-						class="white-text text-darken-2">닫기</span></a> <a href="index.jsp?flag=register"
-						class="modal-action waves-effect waves-green btn-flat light-blue darken-3"><span
-						class="white-text text-darken-2">회원가입</span></a>
-					<button class="btn col s12 waves-effect waves-light light-blue darken-3"
-						type="submit" name="action">로그인</button>
+					<div class="row">
+						<div class="center">
+							<a href="#!"
+								class="modal-close waves-effect waves-green btn-flat deep-orange lighten-2"><span
+								class="white-text text-darken-2">닫기</span></a> <a
+								href="index.jsp?flag=register"
+								class="modal-action waves-effect waves-green btn-flat light-blue darken-3"><span
+								class="white-text text-darken-2">회원가입</span></a>
+							<button class="btn waves-effect waves-light light-blue darken-3"
+								type="submit" name="action">로그인</button>
+						</div>
+
+
+					</div>
 				</div>
 			</form>
 		</c:when>
@@ -83,7 +94,7 @@
 
 <!-- 패럴렉스 이미지 및 로고 뷰 large에서만 보임 -->
 <div class="parallax-container">
-   <a href="index.jsp" class="valign hide-on-med-and-down"><h1 class="white-text center">RENTAL</h1></a>
+   <a href="index.jsp" class="valign hide-on-med-and-down"><div class="row center" id="logo"><img class="responsive-img" src="data/logo.png"></div></a>
    <div class="parallax"><img src="data/main.jpg">
 	</div>
 </div>

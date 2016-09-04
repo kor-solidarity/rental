@@ -1,5 +1,5 @@
 .parallax-container {
-      height: 150px;
+      height: 250px;
     }
 #card1{
 	position:absolute;
@@ -12,4 +12,7 @@
 #card3{
 	position:absolute;
 	z-index: 1;
+}
+#logo{
+	margin-top: 10px;
 }
