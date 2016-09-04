@@ -26,10 +26,10 @@ rentBean.setRent_edate(request.getParameter("period2"));
 <head>
 
 <!--Import Google Icon Font-->
-<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
 <!-- Compiled and minified CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css"/>
+<link rel="stylesheet" href="css/style.css"/>
 <!--Let browser know website is optimized for mobile-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8"/>
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
@@ -43,20 +43,32 @@ rentBean.setRent_edate(request.getParameter("period2"));
 $("#rental_date").text("대여날짜 "+"${param.period1}");
 $("#return_date").text("반납날짜 "+"${param.period2}");
 </script>
-<c:forEach var="i" items="${dto}" >
-	<div class="card medium">
-		<div class="card-image">
-              <img src="data/${i.image}">
-              <span class="card-title">${i.car_name}</span>
-            </div>
-            <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-            </div>
+
+<c:forEach var="s" items="${dto}">
+	<a href="rent.jsp?car_id=${s.car_id}">
+	<div class="col s12 m12">
+		<div class="card horizontal">
+			<div class="card-image">
+				<img src="data/${s.image }">
+			</div>
+			<div class="card-stacked">
+				<div class="card-content">
+					<table>
+						<tr><td><b>${s.car_name}</b></td></tr>
+						<tr><td>${s.com_id}</td></tr>
+						<tr>
+							<td>
+								<div class="chip">${s.spec}</div>
+							</td>
+						</tr>
+					</table>
+					<p><hr>
+					<b>가격: ${s.price }원</b>
+				</div>
+			</div>
+		</div>
 	</div>
+	</a>
 </c:forEach>
 
 

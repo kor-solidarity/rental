@@ -41,18 +41,18 @@ public class CarProcessDao {
 		}
 		return list;
 	}
-	public List searchCarDataSize(RentBean bean){
+	public CarDto searchCarData(RentBean bean){
 		SqlSession sqlSession = factory.openSession();
-		List list = null;
+		CarDto dto=null;
 		try {
 			CarSqlMapperInter inter = (CarSqlMapperInter)sqlSession.getMapper(CarSqlMapperInter.class);
-			list = inter.searchCarDataAll(bean);
+			dto = inter.searchCarData(bean);
 		} catch (Exception e) {
-			System.out.println("searchCarDataAll err" + e);
+			System.out.println("searchCarData err" + e);
 		}finally {
 			if(sqlSession != null) sqlSession.close();
 		}
-		return list;
+		return dto;
 	}
 	
 	public List searchCar(){
