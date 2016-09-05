@@ -39,12 +39,12 @@ public class RentProcessDao {
 		return dto;
 	}
 	
-	public boolean insertRent(RentDto dto){
+	public boolean insertRent(RentBean bean){
 		boolean b = false;
 		SqlSession sqlSession = factory.openSession();
 		try {
 			RentSqlMapperInter inter = (RentSqlMapperInter)sqlSession.getMapper(RentSqlMapperInter.class);
-			if(inter.insertRent(dto) > 0) b = true; //해당 메소드
+			if(inter.insertRentData(bean) > 0) b = true; //해당 메소드
 			sqlSession.commit();
 		} catch (Exception e) {
 			System.out.println("insertRent err" + e);

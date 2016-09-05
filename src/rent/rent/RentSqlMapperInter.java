@@ -22,11 +22,9 @@ public interface RentSqlMapperInter {	//sql을 method에 맵핑
 	public int insertRent(RentDto dto);
 	
 	//해당기간에 렌트한데이터가 없을때 렌트에 삽입
-	//인자순서 1.cus_id,2.car_id,3.rent_sdate,4.rent_edate,5.rent_sdate,6.rent_edate,7.rent_sdate,8.rent_edate,9.car_id
-	@Insert("insert into rent(cus_id,car_id,rent_sdate,rent_edate)"
-			+ " select #{cus_id},#{car_id},#{rent_sdate},#{rent_edate} from dual"
-			+ " where exists(select * from rent where exists(select ai from (select car_id ai,count(car_id) ac from rent where(rent_sdate>#{rent_sdate} and rent_sdate>#{rent_edate}) or (rent_edate<#{rent_sdate} and rent_edate<#{rent_edate}) group by car_id) a,(select car_id bi,count(car_id) bc from rent group by car_id) b where ai=bi and ac=bc and ai=#{car_id}))")
-	public int insertRentData(CarDto dto);
+	
+	@Insert("insert into rent(cus_id,car_id,rent_sdate,rent_edate) select #{cus_id},#{car_id},#{rent_sdate},#{rent_edate} from dual where exists(select car_id from car where (not car_id in(select car_id from rent) and car_id=#{car_id}) or car_id in (select ai from (select car_id ai,count(car_id) ac from rent where(rent_sdate>#{rent_sdate} and rent_sdate>#{rent_edate}) or (rent_edate<#{rent_sdate} and rent_edate<#{rent_edate}) group by car_id) a,(select car_id bi,count(car_id) bc from rent group by car_id) b where ai=bi and ac=bc and ai=#{car_id}))")
+	public int insertRentData(RentBean bean);
 	
 	@Update("update rent set cus_id=#{cus_id}, car_id=#{car_id}, rent_sdate=#{rent_sdate}, "
 			+ "rent_edate=#{rent_edate}, rent_ddate=#{rent_ddate}, insurance=#{insurance}"
