@@ -71,7 +71,6 @@
 			<form action="customer/login.jsp" method="post">
 				<div class="modal-content">
 					<h4 class="white-text text-darken-2">${sessionScope.id}님 환영합니다</h4>
-					
 				</div>
 				<div class="modal-footer blue accent-2">
 					<a href="#!"

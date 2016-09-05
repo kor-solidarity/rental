@@ -1,4 +1,6 @@
 $(document).ready(function(){
+	$("body").css("display", "none");
+    $("body").fadeIn(400); 
 	$('.parallax').parallax();	//상단이미지 parallax 효과
 	 $('#modallogin').leanModal();  //로그인 모달창열기
 	 $('#modallogin2').leanModal();  //로그인 모달창열기
