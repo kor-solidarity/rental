@@ -6,7 +6,7 @@ import java.util.Map;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
-import rent.customer.SearchBean;
+
 import rent.mybatis.SqlMapConfig;
 import rent.rent.RentBean;
 import rent.rent.RentDto;

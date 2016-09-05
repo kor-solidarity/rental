@@ -15,6 +15,9 @@ public interface CustomerSqlMapperInter {	//sql을 method에 맵핑
 	@Select("select * from customer where cus_id=#{cus_id} and cus_pwd=#{cus_pwd}")
 	public CustomerDto selectCustomerById(CustomerBean bean);
 	
+	@Select("select * from ziptab where area3 like concat('%',#{area3},'%') ")
+	public List<ZiptabDto> zipcodeRead(String area3); 
+	
 	@Insert("insert into Customer values(#{cus_id},#{cus_pwd},#{cus_name},#{cus_addr},#{cus_tel},#{cus_mail},#{license})")
 	public int insertCustomer(CustomerDto dto);
 	
@@ -24,5 +27,6 @@ public interface CustomerSqlMapperInter {	//sql을 method에 맵핑
 
 	@Delete("delete from Customer where cus_id = #{cus_id}")
 	public int deleteCustomer(String id);
+	
 	
 }

@@ -1,5 +1,6 @@
 package rent.customer;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -7,6 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 import rent.mybatis.SqlMapConfig;
+
 
 public class CustomerProcessDao {
 	private SqlSessionFactory factory = SqlMapConfig.getSqlSession();
@@ -38,6 +40,24 @@ public class CustomerProcessDao {
 			if(sqlSession != null) sqlSession.close();
 		}
 		return dto;
+	}
+	
+	public List zipcodeRead(String area3){
+		SqlSession sqlSession = factory.openSession();
+		ArrayList<ZiptabDto> list =null;
+		try {
+			CustomerSqlMapperInter inter = (CustomerSqlMapperInter)sqlSession.getMapper(CustomerSqlMapperInter.class);
+			list =(ArrayList<ZiptabDto>)inter.zipcodeRead(area3);
+		} catch (Exception e) {
+			System.out.println("zipcodeRead err"+e);
+		}finally{
+			try {
+				if(sqlSession != null) sqlSession.close();
+			} catch (Exception e2) {
+			}
+		}
+		return list;
+		
 	}
 	
 	public boolean insertCustomer(CustomerDto dto){

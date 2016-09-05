@@ -11,10 +11,14 @@
 <%request.setCharacterEncoding("utf-8"); %>
 
 <c:if test="${param.flag=='logfail'}">
-<%System.out.println("로그실패"); %>
+<script>
+Materialize.toast('로그인에 실패했습니다', 3000, 'rounded');
+</script>
 </c:if>
 <c:if test="${param.flag=='logout'}">
-<%System.out.println("로그아웃"); %>
+<script>
+Materialize.toast('로그아웃 했습니다', 3000, 'rounded');
+</script>
 </c:if>
 
 
