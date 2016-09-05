@@ -114,8 +114,8 @@ $(document).ready(function(){
 		 var code= $("#autocomplete-input").val();
 		 $.ajax({
 			 type:"get",
-			 url:"https://maps.googleapis.com/maps/api/place/queryautocomplete/json?&key=AIzaSyAicazGrp4eMVwn2iSXWbTjC0MCy2igjmY&input=gangnam",
-			 dataType:"jsonp",
+			 url:"customer/zipcheck.jsp?area3=강남",
+			 dataType:"json",
 			 crossDomain:true,
 			 success:function(data){
 				alert(1);
@@ -132,35 +132,6 @@ $(document).ready(function(){
 	 
 	 
 });
-function getAddr(){
-	$.ajax({
-		 url :"http://www.juso.go.kr/addrlink/addrLinkApiJsonp.do"  //인터넷망
-		,type:"post"
-		,data:$("#form").serialize()
-		,dataType:"jsonp"
-		,crossDomain:true
-		,success:function(xmlStr){
-			if(navigator.appName.indexOf("Microsoft") > -1){
-				var xmlData = new ActiveXObject("Microsoft.XMLDOM");
-				xmlData.loadXML(xmlStr.returnXml)
-			}else{
-				var xmlData = xmlStr.returnXml;
-			}
-			$("#list").html("");
-			var errCode = $(xmlData).find("errorCode").text();
-			var errDesc = $(xmlData).find("errorMessage").text();
-			if(errCode != "0"){
-				alert(errCode+"="+errDesc);
-			}else{
-				if(xmlStr != null){
-					makeList(xmlData);
-				}
-			}
-		}
-	    ,error: function(xhr,status, error){
-	    	alert("에러발생");
-	    }
-	});
-}
+
 
 
