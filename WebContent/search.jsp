@@ -5,19 +5,19 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <jsp:useBean id="rentBean" class="rent.rent.RentBean" scope="session"/>
 <%
-rentBean.setRent_sdate(request.getParameter("period1"));
-rentBean.setRent_edate(request.getParameter("period2"));
-rentBean.setType(request.getParameterValues("option"));
+rentBean.setRent_sdate(request.getParameter("rent_sdate"));
+rentBean.setRent_edate(request.getParameter("rent_edate"));
+rentBean.setType(request.getParameterValues("type"));
 %>
 <jsp:useBean id="carprocess" class="rent.car.CarProcessDao"></jsp:useBean>
 
 
 <c:choose>
-	<c:when test="${param.period1 != null && param.period2 != null && param.option != null}">
+	<c:when test="${param.rent_sdate != null && param.rent_edate != null && param.type != null}">
 	 <c:set var="dto" value="<%=carprocess.searchCarDataType(rentBean)%>"/>
 	 
 	</c:when>
-	<c:when test="${param.period1 != null && param.period2 != null && param.option == null}">
+	<c:when test="${param.rent_sdate != null && param.rent_edate != null && param.type == null}">
 	<c:set var="dto" value="<%=carprocess.searchCarDataAll(rentBean)%>"/>
 	</c:when>
 </c:choose>
@@ -41,8 +41,8 @@ rentBean.setType(request.getParameterValues("option"));
 <script type="text/javascript" src="js/script.js"></script>
 <%@ include file="customer/index_top.jsp" %>
 <script>
-$("#rental_date").text("대여날짜 "+"${param.period1}");
-$("#return_date").text("반납날짜 "+"${param.period2}");
+$("#rental_date").text("대여날짜 "+"${param.rent_sdate}");
+$("#return_date").text("반납날짜 "+"${param.rent_edate}");
 </script>
 
 <c:forEach var="s" items="${dto}">

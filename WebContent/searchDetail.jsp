@@ -56,13 +56,11 @@ $("#return_date").text("반납날짜 "+"${rentBean.rent_edate}");
      starting_top: '4%', // Starting top style attribute
      ending_top: '10%', // Ending top style attribute
      ready: function() {}, // Callback for Modal open
-     complete: function() { location.href="search.jsp?period1=${rentBean.rent_sdate}&period2=${rentBean.rent_edate}";} // Callback for Modal close
+     complete: function() { location.href="search.jsp?rent_sdate=${rentBean.rent_sdate}&rent_edate=${rentBean.rent_edate}";} // Callback for Modal close
    }
  );
  </script>
 </c:if>
-
-
 
 
 	<div class="row">
@@ -96,7 +94,7 @@ $("#return_date").text("반납날짜 "+"${rentBean.rent_edate}");
 	
 	<!--회원정보 보험여부및  결제정보  로그인후에만 사용가능하도록  -->
 	<c:choose>
-		<c:when test="${sessionScope.id==null }">
+		<c:when test="${sessionScope.cus_id==null }">
 			<div class="row">
 				<div class="col s12"><h4 class="center"><a href="#modal1" id="modallogin2">로그인을 해주세요</a></h4></div>
 			</div>

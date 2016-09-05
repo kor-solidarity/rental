@@ -10,7 +10,12 @@
 <!-- large미만 로고 뷰 -->
 <%request.setCharacterEncoding("utf-8"); %>
 
-
+<c:if test="${param.flag=='logfail'}">
+<%System.out.println("로그실패"); %>
+</c:if>
+<c:if test="${param.flag=='logout'}">
+<%System.out.println("로그아웃"); %>
+</c:if>
 
 
 
@@ -28,7 +33,7 @@
 <div id="modal1" class="modal teal accent-4">
 	<c:choose>
 		
-		<c:when test="${sessionScope.id==null}">
+		<c:when test="${sessionScope.cus_id==null}">
 			<form action="customer/login.jsp" method="post">
 				<div class="modal-content">
 					<h4 class="white-text text-darken-2 center">로그인</h4>
@@ -36,14 +41,14 @@
 					<div class="row">
 					<div class="input-field col s12 m6 push-m3">
 						<input id="id" type="text"
-							class="validate white-text text-darken-2" name="id"> <label
+							class="validate white-text text-darken-2" name="cus_id"> <label
 							for="id" class="white-text text-darken-2">아이디</label>
 					</div>
 					</div>
 					<div class="row">
 					<div class="input-field col s12 m6 push-m3">
 						<input id="password" type="password"
-							class="validate white-text text-darken-2" name="pwd"> <label
+							class="validate white-text text-darken-2" name="cus_pwd"> <label
 							for="password" class="white-text">패스워드</label>
 					</div>
 					</div>
@@ -70,7 +75,7 @@
 		<c:otherwise>
 			<form action="customer/login.jsp" method="post">
 				<div class="modal-content">
-					<h4 class="white-text text-darken-2">${sessionScope.id}님 환영합니다</h4>
+					<h4 class="white-text text-darken-2">${sessionScope.cus_id}님 환영합니다</h4>
 				</div>
 				<div class="modal-footer blue accent-2">
 					<a href="#!"
@@ -119,7 +124,7 @@
 							<div class="card-content white-text">
 								<span>대여날짜</span>
 								<div class="input-field col s12 center-align" id="period1">
-									<select name="period1">
+									<select name="rent_sdate">
 										<option disabled selected>대여날짜를 선택해주세요</option>
 										<option></option>
 										<option></option>
@@ -156,7 +161,7 @@
 						<div class="card-content white-text">
 							<span>반납날짜</span>
 							<div class="input-field col s12"  id="period2">
-								<select name="period2" class="white-text">
+								<select name="rent_edate" class="white-text">
 									<option disabled selected>대여 날짜를 먼저 선택해주세요</option>
 									<option></option>
 									<option></option>
@@ -188,35 +193,35 @@
 				<div class="card" id="card3">
 					<div class="row">
 						<div class="card-content col s6">
-							<input type="checkbox" id="test1" name="option" value="1"/> <label for="test1"
+							<input type="checkbox" id="test1" name="type" value="1"/> <label for="test1"
 								class="black-text">경차</label>
 						</div>
 						<div class="card-content col s6">
-							<input type="checkbox" id="test2" name="option" value="2"/> <label for="test2"
+							<input type="checkbox" id="test2" name="type" value="2"/> <label for="test2"
 								class="black-text">소형</label>
 						</div>
 						<div class="card-content col s6">
-							<input type="checkbox" id="test3" name="option" value="3"/> <label for="test3"
+							<input type="checkbox" id="test3" name="type" value="3"/> <label for="test3"
 								class="black-text">준중형</label>
 						</div>
 						<div class="card-content col s6">
-							<input type="checkbox" id="test4" name="option" value="4"/> <label for="test4"
+							<input type="checkbox" id="test4" name="type" value="4"/> <label for="test4"
 								class="black-text">중형</label>
 						</div>
 						<div class="card-content col s6">
-							<input type="checkbox" id="test5" name="option" value="5"/> <label for="test5"
+							<input type="checkbox" id="test5" name="type" value="5"/> <label for="test5"
 								class="black-text">대형</label>
 						</div>
 						<div class="card-content col s6">
-							<input type="checkbox" id="test6" name="option" value="6"/> <label for="test6"
+							<input type="checkbox" id="test6" name="type" value="6"/> <label for="test6"
 								class="black-text">SUV</label>
 						</div>
 						<div class="card-content col s6">
-							<input type="checkbox" id="test7" name="option" value="7"/> <label for="test7"
+							<input type="checkbox" id="test7" name="type" value="7"/> <label for="test7"
 								class="black-text">승합</label>
 						</div>
 						<div class="card-content col s6">
-							<input type="checkbox" id="test8" name="option" value="8"/> <label for="test8"
+							<input type="checkbox" id="test8" name="type" value="8"/> <label for="test8"
 								class="black-text">수입</label>
 						</div>
 						<div class="center-align">
@@ -249,19 +254,19 @@
 <div class="row">	
 	<!-- large 확대시 로그인 패널 -->
    <div class="col l2 push-l10 hide-on-med-and-down">
-		<c:if test="${sessionScope.id==null}">
+		<c:if test="${sessionScope.cus_id==null}">
 			<form action="customer/login.jsp" method="post">
 				<div class="card teal accent-4">
 					<div class="card-content white-text text-darken-2">
 						<!-- id,password입력 영역 -->
 						<div class="input-field col s12">
 							<input id="id" type="text"
-								class="validate white-text text-darken-2" name="id"> <label
+								class="validate white-text text-darken-2" name="cus_id"> <label
 								for="id" class="white-text text-darken-2">아이디</label>
 						</div>
 						<div class="input-field col s12">
 							<input id="password" type="text"
-								class="validate white-text text-darken-2" name="pwd"> <label
+								class="validate white-text text-darken-2" name="cus_pwd"> <label
 								for="password" class="white-text text-darken-2">패스워드</label>
 						</div>
 
@@ -276,13 +281,13 @@
 				</div>
 			</form>
 		</c:if>
-		<c:if test="${sessionScope.id!=null }">
+		<c:if test="${sessionScope.cus_id!=null }">
 			<form action="customer/login.jsp" method="post">
 				<div class="card teal accent-4">
 					<div class="card-content white-text text-darken-2">
 						<!-- id,password입력 영역 -->
 						<div class="col s12">
-							<label class="white-text text-darken-2"><h6>${sessionScope.id }님 환영합니다<h6></label>
+							<label class="white-text text-darken-2"><h6>${sessionScope.cus_id }님 환영합니다<h6></label>
 						</div>
 						
 

@@ -42,7 +42,7 @@
 					<a class="btn-large blue accent-2"><b>이용 방법 확인</b></a>
 				</div>
 			</div>
-		</c:otherwise>
+	</c:otherwise>
 </c:choose>
 
  

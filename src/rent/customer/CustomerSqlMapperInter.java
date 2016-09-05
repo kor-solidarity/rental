@@ -12,8 +12,8 @@ public interface CustomerSqlMapperInter {	//sql을 method에 맵핑
 	@Select("select * from Customer")
 	public List<CustomerDto> selectCustomerAll();
 	
-	@Select("select * from membertab where cus_id=#{cus_id}")
-	public CustomerDto selectCustomerById(String id);
+	@Select("select * from customer where cus_id=#{cus_id} and cus_pwd=#{cus_pwd}")
+	public CustomerDto selectCustomerById(CustomerBean bean);
 	
 	@Insert("insert into Customer values(#{cus_id},#{cus_pwd},#{cus_name},#{cus_addr},#{cus_tel},#{cus_mail},#{license})")
 	public int insertCustomer(CustomerDto dto);

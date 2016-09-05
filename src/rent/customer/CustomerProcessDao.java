@@ -25,14 +25,15 @@ public class CustomerProcessDao {
 		return list;
 	}
 	
-	public  CustomerDto selectCustomerById(String id){
+	public  CustomerDto selectCustomerById(CustomerBean bean){
 		SqlSession sqlSession = factory.openSession();
 		CustomerDto dto = null;
 		try {
 			CustomerSqlMapperInter inter = (CustomerSqlMapperInter)sqlSession.getMapper(CustomerSqlMapperInter.class);
-			dto = inter.selectCustomerById(id); //해당 메소드
+			dto = inter.selectCustomerById(bean); //해당 메소드
 		} catch (Exception e) {
-			System.out.println("selectCustomerById err" + e);
+			System.out.println(e);
+			return dto;
 		}finally {
 			if(sqlSession != null) sqlSession.close();
 		}
