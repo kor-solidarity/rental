@@ -103,9 +103,15 @@ $("#return_date").text("반납날짜 "+"${rentBean.rent_edate}");
 		</c:when>
 		
 		<c:otherwise>
+		
 			<div class="row">
-				<div class="col s12 m6"></div>
-				<div class="col s12 m6"></div>
+			
+				<div class="col s12 m6">
+				
+				</div>
+				<div class="col s12 m6">
+				
+				</div>
 			</div>
 		</c:otherwise>
 

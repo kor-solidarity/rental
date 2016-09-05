@@ -13,10 +13,12 @@ import rent.rent.RentDto;
 
 public interface CarSqlMapperInter {	//sql을 method에 맵핑
 	
+	//대여날짜가 안겹치는 모든차데이터 출력
 	//인자순서 1.rent_sdate,2.rent_edate,3.rent_sdate,4.rent_edate
 	@Select("select * from car where car_id in(select ai from (select car_id ai,count(car_id) ac from rent where(rent_sdate>#{rent_sdate} and rent_sdate>#{rent_edate}) or (rent_edate<#{rent_sdate} and rent_edate<#{rent_edate}) group by car_id) a,(select car_id bi,count(car_id) bc from rent group by car_id) b where ai=bi and ac=bc)")
 	public List<CarDto> searchCarDataAll(RentBean bean);
 	
+	//대여날짜가 안겹치는 선택한 차데이터 하나 출력
 	// 인자순서1.rent_sdate,2.rent_edate,3.rent_sdate,4.rent_edate,5.car_id
 	@Select("select * from car where car_id in(select ai from (select car_id ai,count(car_id) ac from rent where(rent_sdate>#{rent_sdate} and rent_sdate>#{rent_edate}) or (rent_edate<#{rent_sdate} and rent_edate<#{rent_edate}) group by car_id) a,(select car_id bi,count(car_id) bc from rent group by car_id) b where ai=bi and ac=bc and ai=#{car_id})")
 	public CarDto searchCarData(RentBean bean);

@@ -16,3 +16,11 @@
 #logo{
 	margin-top: 10px;
 }
+#labelid  #labelname{
+   padding: .2em;
+   -webkit-transition: all .3s;
+   transition: all .3s;
+}
+#logmodal {
+ background: rgba(0, 0, 0, 0.73);
+}
